@@ -2,6 +2,7 @@
   "name": "quick-prop",
   "version": "1.0.7",
   "main": "lib/index.js",
+  "typings": "types/index.d.ts",
   "repository": "https://github.com/socheatsok78/quick-prop.git",
   "author": "Socheat Sok <alex@socheat.net>",
   "license": "MIT",
@@ -10,7 +11,6 @@
     "build": "babel src/ -d lib/",
     "prepare": "yarn run build"
   },
-  "typings": "types/index.d.ts",
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.6",
