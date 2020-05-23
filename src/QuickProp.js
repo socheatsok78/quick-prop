@@ -39,7 +39,7 @@ export default class QuickProp {
     }
 
     /**
-     * Validate properties
+     * Assert all properties for validity
      * @returns {boolean}
      */
     validate() {
@@ -98,7 +98,7 @@ export default class QuickProp {
     }
 
     /**
-     * Assert the given value match property types
+     * Assert whether a prop is valid.
      * @param {string} attr
      * @param {any} value
      * @param {PropOptions} prop
@@ -131,6 +131,14 @@ export default class QuickProp {
         if (!valid) {
             warn(getInvalidTypeMessage(attr, value, expectedTypes))
             return false
+        }
+
+        const validator = prop.validator
+        if (validator) {
+            if (!validator(value)) {
+                warn('Invalid prop: custom validator check failed for prop "' + attr + '".')
+                return false
+            }
         }
 
         return true
