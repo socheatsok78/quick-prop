@@ -17,7 +17,7 @@ class User extends QuickProp {
     constructor() {
         super({
             id: {
-                type: [Number],
+                type: Number,
                 required: true,
                 default() {
                     return 1
@@ -26,6 +26,13 @@ class User extends QuickProp {
             name: {
                 type: String,
                 required: true
+            },
+            email: {
+                type: String,
+                required: true,
+                validator(value) {
+                    return /^[^@]+@[^@]+\.[^@]+$/.test(value)
+                }
             }
         })
     }
@@ -45,6 +52,7 @@ user.id = 'my string'
 ## Todo
 
 - [ ] Better implementation
+- [x] Add Type Decorator
 
 #### License
 License under [MIT](LICENSE)
