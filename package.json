@@ -22,5 +22,11 @@
     "babel-jest": "^26.0.1",
     "flow-bin": "^0.125.1",
     "jest": "^26.0.1"
-  }
+  },
+  "keywords": [
+    "vue",
+    "model",
+    "props",
+    "data"
+  ]
 }
