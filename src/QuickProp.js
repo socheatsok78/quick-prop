@@ -1,3 +1,5 @@
+// @flow
+
 import {
     simpleCheckRE,
     assertType,
@@ -6,18 +8,18 @@ import {
 
 import { warn } from './util/debug'
 
-export type PropOptions = {
+type PropOptions = {
     type: Function | Array<Function> | null,
     default: any,
     required: ?boolean,
     validator: ?Function
 };
 
-export type PropsTypes = {
+type PropsTypes = {
     [key: string]: PropOptions
 };
 
-export type StateTypes = {
+type StateTypes = {
     [key: string]: any
 }
 
@@ -25,6 +27,10 @@ export default class QuickProp {
     #props: PropsTypes;
     #state: StateTypes;
 
+    /**
+     * Create a new instance of QuickProp
+     * @param {PropsTypes} props
+     */
     constructor(props: PropsTypes) {
         this.#props = props;
         this.#state = {}
@@ -32,16 +38,27 @@ export default class QuickProp {
         this._compile(this.#props)
     }
 
+    /**
+     * Validate properties
+     * @returns {boolean}
+     */
     validate() {
         const attributes: string[] = Object.keys(this.#props);
+        let valid = true;
 
         attributes.forEach(attr => {
-            const prop = this.#props[attr]
-            const value = this.#state[attr]
-            this.assertType(attr, value, prop)
+            const prop = this.#props[attr];
+            const value = this.#state[attr];
+            valid = this._assertType(attr, value, prop);
         })
+
+        return valid;
     }
 
+    /**
+     * Compile attribute properties
+     * @param {PropsTypes} props
+     */
     _compile(props: PropsTypes) {
         const attributes: string[] = Object.keys(props);
 
@@ -58,22 +75,35 @@ export default class QuickProp {
         })
     }
 
+    /**
+     * Define property getter and setter
+     * @param {string} attr
+     * @param {PropOptions} prop
+     */
     _defineProperties(attr: string, prop: PropOptions) {
+        const self = this;
+
         Object.defineProperty(this, attr, {
             enumerable: true,
             get() {
-                return this.#state[attr];
+                return self.#state[attr];
             },
-            set(value) {
+            set(value: any) {
                 if (this._assertType(attr, value, prop)) {
-                    this.#state[attr] = value;
-                    return true
+                    self.#state[attr] = value;
+                    return
                 }
             }
         })
     }
 
-    _assertType(attr, value, prop) {
+    /**
+     * Assert the given value match property types
+     * @param {string} attr
+     * @param {any} value
+     * @param {PropOptions} prop
+     */
+    _assertType(attr: string, value: any, prop: PropOptions) {
         if ((value == null || value == undefined) && prop.required) {
             warn('Missing required prop: "' + attr + '"')
             return false
@@ -106,7 +136,12 @@ export default class QuickProp {
         return true
     }
 
-    set(attr, value) {
+    /**
+     * Internally update attribute property without trigger validation
+     * @param {string} attr
+     * @param {any} value
+     */
+    set(attr: string, value: any) {
         this.#state[attr] = value;
     }
 
