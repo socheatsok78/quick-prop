@@ -1,12 +1,12 @@
-# QuickModel
-If you are familliar with VueJS component's prop, you already knows how to use QuickModel.
+# QuickProp
+If you are familliar with VueJS component's prop, you already knows how to use QuickProp.
 
-QuickModel is a JavaScript data model made easy.
+QuickProp is a JavaScript data model made easy.
 
 ```js
-import QuickModel from 'quick-model'
+import QuickProp from 'quick-prop'
 
-class User extends QuickModel {
+class User extends QuickProp {
     constructor() {
         super({
             id: {
