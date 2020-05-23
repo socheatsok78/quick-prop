@@ -42,5 +42,9 @@ user.id = 'my string'
  * /
 ```
 
+## Todo
+
+- [ ] Better implementation
+
 #### License
 License under [MIT](LICENSE)
