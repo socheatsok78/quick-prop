@@ -2,6 +2,7 @@
 
 [![npm-version](https://img.shields.io/npm/v/quick-prop/latest)][npm-url]
 [![npm-download](https://img.shields.io/npm/dm/quick-prop)][npm-url]
+[![Jest CI](https://github.com/socheatsok78/quick-prop/workflows/Jest%20CI/badge.svg)][github-action-jest]
 
 If you are familiar with Vue.js component's prop, you already knows how to use QuickProp.
 QuickProp is a JavaScript data model made easy.
@@ -62,3 +63,4 @@ License under [MIT](LICENSE)
 
 <!-- variables -->
 [npm-url]: https://www.npmjs.com/package/quick-prop
+[github-action-jest]: https://github.com/socheatsok78/quick-prop/actions?query=workflow%3A%22Jest+CI%22
