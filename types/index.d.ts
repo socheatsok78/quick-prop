@@ -10,26 +10,12 @@ declare type PropsTypes = {
 };
 
 export default class QuickProp {
-  #private;
-  constructor(props: PropsTypes);
   /**
-   * Compile attribute properties
+   * Create a new instance of QuickProp
    * @param {PropsTypes} props
    */
-  private compile;
-  /**
-   * Define property getter and setter
-   * @param {string} attr
-   * @param {PropOptions} prop
-   */
-  private defineProperties;
-  /**
-   * Assert the given value match property types
-   * @param {string} attr
-   * @param {any} value
-   * @param {PropOptions} prop
-   */
-  _assertType(attr: string, value: any, prop: PropOptions): boolean;
+  constructor(props: PropsTypes);
+
   /**
    * Assert all properties for validity
    * @returns {boolean}
