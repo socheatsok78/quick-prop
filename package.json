@@ -9,6 +9,7 @@
     "build": "babel src/ -d lib/",
     "prepare": "yarn run build"
   },
+  "typings": "types/index.d.ts",
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.6",
