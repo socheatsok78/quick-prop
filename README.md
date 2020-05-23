@@ -1,6 +1,9 @@
 # QuickProp
-If you are familiar with Vue.js component's prop, you already knows how to use QuickProp.
 
+[![npm-version](https://img.shields.io/npm/v/quick-prop/latest)][npm-url]
+[![npm-download](https://img.shields.io/npm/dm/quick-prop)][npm-url]
+
+If you are familiar with Vue.js component's prop, you already knows how to use QuickProp.
 QuickProp is a JavaScript data model made easy.
 
 ## Installation
@@ -56,3 +59,6 @@ user.id = 'my string'
 
 #### License
 License under [MIT](LICENSE)
+
+<!-- variables -->
+[npm-url]: https://www.npmjs.com/package/quick-prop
