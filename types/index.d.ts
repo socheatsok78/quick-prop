@@ -30,5 +30,17 @@ export default class QuickProp {
    * @param {PropOptions} prop
    */
   _assertType(attr: string, value: any, prop: PropOptions): boolean;
+  /**
+   * Assert all properties for validity
+   * @returns {boolean}
+   */
+  validate(): boolean;
+
+  /**
+   * Internally update attribute property without trigger validation
+   * @param {string} attr
+   * @param {any} value
+   */
+  set(attr: string, value: any);
 }
 export {};
