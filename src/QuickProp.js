@@ -21,7 +21,7 @@ export type StateTypes = {
     [key: string]: any
 }
 
-export default class QuickModel {
+export default class QuickProp {
     #props: PropsTypes;
     #state: StateTypes;
 

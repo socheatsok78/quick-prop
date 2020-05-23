@@ -1,3 +1,3 @@
-import QuickModel from './QuickModel'
+import QuickProp from './QuickProp'
 
-export default QuickModel
+export default QuickProp
