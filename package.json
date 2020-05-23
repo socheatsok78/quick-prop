@@ -9,7 +9,8 @@
   "scripts": {
     "prebuild": "rm -rf lib/",
     "build": "babel src/ -d lib/",
-    "prepare": "yarn run build"
+    "prepare": "yarn run build",
+    "test": "NODE_ENV=production; jest"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
