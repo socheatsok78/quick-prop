@@ -1,5 +1,5 @@
 # QuickProp
-If you are familliar with VueJS component's prop, you already knows how to use QuickProp.
+If you are familiar with Vue.js component's prop, you already knows how to use QuickProp.
 
 QuickProp is a JavaScript data model made easy.
 
