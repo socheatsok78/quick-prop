@@ -1,0 +1,21 @@
+{
+  "name": "quick-model",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "repository": "https://github.com/socheatsok78/quick-model.git",
+  "author": "Socheat Sok <alex@socheat.net>",
+  "license": "MIT",
+  "scripts": {
+    "build": "babel src/ -d lib/",
+    "prepublish": "yarn run build"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-flow": "^7.9.0",
+    "babel-jest": "^26.0.1",
+    "flow-bin": "^0.125.1",
+    "jest": "^26.0.1"
+  }
+}
