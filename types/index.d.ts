@@ -27,6 +27,5 @@ export default class QuickProp {
    * @param {string} attr
    * @param {any} value
    */
-  set(attr: string, value: any);
+  set(attr: string, value: any): void;
 }
-export {};
