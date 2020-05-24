@@ -1,6 +1,6 @@
 {
   "name": "quick-prop",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "main": "lib/index.js",
   "typings": "types/index.d.ts",
   "repository": "https://github.com/socheatsok78/quick-prop.git",
