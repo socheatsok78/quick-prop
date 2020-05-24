@@ -32,6 +32,23 @@ class User extends QuickProp {
     }
 }
 
+class Todo extends QuickProp {
+    constructor(data = {}) {
+        super({
+            title: {
+                type: String,
+                required: true
+            },
+            completed: {
+                type: Boolean,
+                default: () => false
+            }
+        })
+
+        this.import(data)
+    }
+}
+
 describe('QuickProp', () => {
     const user = new User()
 
@@ -59,5 +76,16 @@ describe('QuickProp', () => {
         user.toProps = jest.fn()
         user.toProps()
         expect(user.toProps).toHaveBeenCalled()
+    })
+
+    it('should be able to import data to the instance', () => {
+        const todoStub = {
+            title: 'Example',
+            completed: false
+        }
+
+        const todo = new Todo(todoStub)
+
+        expect(todo.toJSON()).toEqual(todoStub)
     })
 })
