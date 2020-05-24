@@ -54,4 +54,10 @@ describe('QuickProp', () => {
         user.name = 1 // stub called 3rd times
         expect(stub).toHaveBeenCalledTimes(3)
     })
+
+    it('should output Vue.js style props', () => {
+        user.toProps = jest.fn()
+        user.toProps()
+        expect(user.toProps).toHaveBeenCalled()
+    })
 })
