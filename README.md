@@ -16,41 +16,47 @@ npm i quick-prop
 ## Usage
 ```js
 import QuickProp from 'quick-prop'
+import { v4 as uuidv4 } from 'uuid';
 
-class User extends QuickProp {
-    constructor() {
+class Todo extends QuickProp {
+    constructor(todo = {}) {
         super({
             id: {
-                type: Number,
-                required: true,
+                type: [Number, String],
                 default() {
-                    return 1
+                    return uuidv4()
                 }
             },
-            name: {
+            title: {
                 type: String,
                 required: true
             },
-            email: {
-                type: String,
-                required: true,
-                validator(value) {
-                    return /^[^@]+@[^@]+\.[^@]+$/.test(value)
-                }
+            completed: {
+                type: Boolean,
+                default: () => false
             }
         })
+
+        this.import(todo)
     }
 }
 
-const user = new User()
+const todo = new Todo({
+    title: 'Example todo'
+})
 
-// By assign the 'user.id' as string will cause a warning in the console
-user.id = 'my string'
+todo.completed = true
 
-/**
- * [QuickProp warn]: Invalid prop: type check failed for prop "id".
- * Expected Number with value NaN, got String with value "my string".
- * /
+console.log(JSON.stringify(todo))
+```
+
+Result:
+```json
+{
+    "id": "f24b19a2-e327-4199-88e9-1c5c8e4b8b82",
+    "title": "Example todo",
+    "completed": true
+}
 ```
 
 ## Todo
