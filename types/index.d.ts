@@ -28,4 +28,10 @@ export default class QuickProp {
    * @param {any} value
    */
   set(attr: string, value: any): void;
+
+  /**
+   * Get Vue.js styled props
+   * @returns {PropsTypes}
+   */
+  toProps(): PropsTypes;
 }
