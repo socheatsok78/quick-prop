@@ -154,6 +154,14 @@ export default class QuickProp {
     }
 
     /**
+     * Get Vue.js styled props
+     * @returns {PropsTypes}
+     */
+    toProps() {
+        return this.#props;
+    }
+
+    /**
      * Override toJSON method
      * @returns {StateTypes}
      */
