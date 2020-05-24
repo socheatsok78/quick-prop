@@ -9,12 +9,22 @@ declare type PropsTypes = {
   [key: string]: PropOptions;
 };
 
+declare type StateTypes = {
+  [key: string]: any
+};
+
 export default class QuickProp {
   /**
    * Create a new instance of QuickProp
    * @param {PropsTypes} props
    */
   constructor(props: PropsTypes);
+
+  /**
+   * Import data
+   * @param {StateTypes} data
+   */
+  import(data: StateTypes): void;
 
   /**
    * Assert all properties for validity
