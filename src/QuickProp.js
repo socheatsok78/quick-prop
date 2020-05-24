@@ -154,6 +154,16 @@ export default class QuickProp {
     }
 
     /**
+     * Internally update attribute property
+     * @param {any} vm
+     * @param {string} attr
+     * @param {any} value
+     */
+    _set(vm: any, attr: string, value: any) {
+        vm[attr] = value
+    }
+
+    /**
      * Get Vue.js styled props
      * @returns {PropsTypes}
      */
