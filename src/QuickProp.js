@@ -39,6 +39,20 @@ export default class QuickProp {
     }
 
     /**
+     * Import data
+     * @param {StateTypes} data
+     */
+    import(data: StateTypes) {
+        const attributes: string[] = Object.keys(this.#props);
+
+        attributes.forEach(attr => {
+            const prop = this.#props[attr];
+            const value = data[attr];
+            this._set(this, attr, value)
+        })
+    }
+
+    /**
      * Assert all properties for validity
      * @returns {boolean}
      */
