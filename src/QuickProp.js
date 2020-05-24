@@ -153,10 +153,17 @@ export default class QuickProp {
         this.#state[attr] = value;
     }
 
+    /**
+     * Override toJSON method
+     * @returns {StateTypes}
+     */
     toJSON() {
         return this.#state;
     }
 
+    /**
+     * Override toString method
+     */
     toString() {
         return this.toJSON()
     }
