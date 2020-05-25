@@ -30,24 +30,26 @@ export default class QuickProp {
     /**
      * Create a new instance of QuickProp
      * @param {PropsTypes} props
+     * @param {StateTypes} state
      */
-    constructor(props: PropsTypes) {
+    constructor(props: PropsTypes, state: StateTypes = {}) {
         this.#props = props;
         this.#state = {}
 
         this._compile(this.#props)
+        this.import(state)
     }
 
     /**
-     * Import data
-     * @param {StateTypes} data
+     * Import state
+     * @param {StateTypes} state
      */
-    import(data: StateTypes) {
+    import(state: StateTypes) {
         const attributes: string[] = Object.keys(this.#props);
 
         attributes.forEach(attr => {
             const prop = this.#props[attr];
-            const value = data[attr];
+            const value = state[attr];
             this._set(this, attr, value)
         })
     }
