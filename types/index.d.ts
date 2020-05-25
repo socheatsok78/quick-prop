@@ -19,7 +19,7 @@ export default class QuickProp {
    * @param {PropsTypes} props
    * @param {StateTypes} state
    */
-  constructor(props: PropsTypes, state: StateTypes);
+  constructor(props: PropsTypes, state?: StateTypes);
 
   /**
    * Import state
