@@ -35,9 +35,7 @@ class Todo extends QuickProp {
                 type: Boolean,
                 default: () => false
             }
-        })
-
-        this.import(todo)
+        }, todo)
     }
 }
 
