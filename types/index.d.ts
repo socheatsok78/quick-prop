@@ -17,14 +17,15 @@ export default class QuickProp {
   /**
    * Create a new instance of QuickProp
    * @param {PropsTypes} props
+   * @param {StateTypes} state
    */
-  constructor(props: PropsTypes);
+  constructor(props: PropsTypes, state: StateTypes);
 
   /**
-   * Import data
-   * @param {StateTypes} data
+   * Import state
+   * @param {StateTypes} state
    */
-  import(data: StateTypes): void;
+  import(state: StateTypes): void;
 
   /**
    * Assert all properties for validity
