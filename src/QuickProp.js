@@ -3,7 +3,8 @@
 import {
     simpleCheckRE,
     assertType,
-    getInvalidTypeMessage
+    getInvalidTypeMessage,
+    isObjectEmpty
 } from './util/shared'
 
 import { warn } from './util/debug'
@@ -45,6 +46,10 @@ export default class QuickProp {
      * @param {StateTypes} state
      */
     import(state: StateTypes) {
+        if (isObjectEmpty(state)) {
+            return
+        }
+
         const attributes: string[] = Object.keys(this.#props);
 
         attributes.forEach(attr => {

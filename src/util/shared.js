@@ -118,3 +118,7 @@ export function assertType(value: any, type: Function): {
         expectedType
     }
 }
+
+export function isObjectEmpty(value: Object) {
+    return Object.keys(value).length === 0;
+}
