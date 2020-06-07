@@ -9,7 +9,6 @@
   "scripts": {
     "prebuild": "rm -rf lib/",
     "build": "babel src/ -d lib/",
-    "prepare": "yarn run build",
     "test": "jest"
   },
   "devDependencies": {
