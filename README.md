@@ -1,11 +1,11 @@
 # QuickProp
 
+If you are familiar with Vue.js component's prop, you already knows how to use QuickProp.
+QuickProp is a JavaScript data model made easy.
+
 [![npm-version](https://img.shields.io/npm/v/quick-prop/latest)][npm-url]
 [![npm-download](https://img.shields.io/npm/dm/quick-prop)][npm-url]
 [![Jest CI](https://github.com/socheatsok78/quick-prop/workflows/Jest%20CI/badge.svg)][github-action-jest]
-
-If you are familiar with Vue.js component's prop, you already knows how to use QuickProp.
-QuickProp is a JavaScript data model made easy.
 
 ## Installation
 
