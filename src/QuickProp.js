@@ -89,7 +89,7 @@ export default class QuickProp {
 
             const value = typeof def === 'function'
                 ? def()
-                : def
+                : null
 
             this.#state[attr] = value;
             this._defineProperties(attr, prop)
