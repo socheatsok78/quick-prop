@@ -58,10 +58,22 @@ Result:
 }
 ```
 
+### Reactivity \w Vue
+
+In some case where data reactivity is needed, you could use the Vuejs plugin to make `quick-prop` reactive.
+
+```js
+import Vue from 'vue'
+import { QuickPropVue } from 'quick-prop'
+
+Vue.use(QuickPropVue)
+```
+
 ## Todo
 
 - [x] Better implementation
 - [x] Add Type Decorator
+- [x] Vue Reactive
 
 #### License
 License under [MIT](LICENSE)
