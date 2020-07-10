@@ -1,10 +1,9 @@
 // @flow
 
 import {
-    simpleCheckRE,
     assertType,
-    getInvalidTypeMessage,
-    isObjectEmpty
+    isObjectEmpty,
+    getInvalidTypeMessage
 } from './util/shared'
 
 import { warn } from './util/debug'
@@ -35,7 +34,7 @@ export default class QuickProp {
      */
     constructor(props: PropsTypes, state: StateTypes = {}) {
         this.#props = props;
-        this.#state = {}
+        this.#state = QuickProp.observable({})
 
         this._compile(this.#props)
         this.import(state)
@@ -105,6 +104,7 @@ export default class QuickProp {
         const self = this;
 
         Object.defineProperty(this, attr, {
+            configurable: true,
             enumerable: true,
             get() {
                 return self.#state[attr];
@@ -182,6 +182,14 @@ export default class QuickProp {
      */
     _set(vm: any, attr: string, value: any) {
         vm[attr] = value
+    }
+
+    /**
+     * Plugin for creating reactive data
+     * @param {any} data
+     */
+    static observable(data: any) {
+        return data
     }
 
     /**
