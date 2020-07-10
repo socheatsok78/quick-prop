@@ -21,7 +21,8 @@
     "@babel/preset-flow": "^7.9.0",
     "babel-jest": "^26.0.1",
     "flow-bin": "^0.125.1",
-    "jest": "^26.0.1"
+    "jest": "^26.0.1",
+    "vue": "^2.6.11"
   },
   "keywords": [
     "vue",

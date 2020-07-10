@@ -1,3 +1,5 @@
+import { VueConstructor } from "vue";
+
 declare type PropOptions = {
   type: Function | Array<Function> | null;
   default: any;
@@ -12,6 +14,14 @@ declare type PropsTypes = {
 declare type StateTypes = {
   [key: string]: any
 };
+
+export const QuickPropVue = {
+  /**
+   * Extend QuickProp Observable plugin from Vue
+   * @param {VueConstructor} Vue
+   */
+  install(Vue: VueConstructor);
+}
 
 export default class QuickProp {
   /**
